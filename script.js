@@ -1,14 +1,3 @@
-// display current day on top of page
-
-// below is a box of business hours
-
-// time blocks change color based on if past, present, or future
-
-// when clicking time block, you can enter an event and save it in local storage
-
-// when refreshed page, items stay
-
-
 var hour9 = $("#9");
 var hour10 = $("#10");
 var hour11 = $("#11");
@@ -20,9 +9,14 @@ var hour4 = $("#16");
 var hour5 = $("#17");
 var time = moment();
 
+
 function setPlanner() {
 
+ // display current day on top of page
+
     $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
+
+ // when clicking time block, you can enter an event and save it in local storage
 
     $(".time-block").each(function () {
         var id = $(this).attr("id");
@@ -42,6 +36,8 @@ saveBtn.on("click", function () {
 
     localStorage.setItem(time, schedule);
 });
+
+// time blocks change color based on if past, present, or future
 
 function pastPresentFuture() {
     hour = time.hours();
